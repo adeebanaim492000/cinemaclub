@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CinemaClub - Movies</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <h1>CinemaClub</h1>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/movies/new}">Add Movie (Admin)</a>
+        <a th:href="@{/login}">Login</a>
+    </nav>
+    <hr/>
+</header>
+
+<main>
+    <h2>Movie Catalog</h2>
+    <p>Browse movies and read reviews from the community.</p>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Genre</th>
+            <th>Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="movie : ${movies}">
+            <td>
+                <a th:href="@{'/movies/' + ${movie.id}}"
+                   th:text="${movie.title}">Movie Title</a>
+            </td>
+            <td th:text="${movie.director}">Director</td>
+            <td th:text="${movie.genre}">Genre</td>
+            <td th:text="${movie.releaseYear}">Year</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+</body>
+</html>
+
