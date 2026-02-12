@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - CinemaClub</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <h1>Login</h1>
+    <nav>
+        <a th:href="@{/}">Home</a>
+    </nav>
+    <hr/>
+</header>
+
+<main>
+    <form th:action="@{/login}" method="post">
+        <div>
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username" required/>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" required/>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+</main>
+
+</body>
+</html>
+
